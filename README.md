@@ -10,3 +10,6 @@ In this module we will cover the basics of automated testing and use `jest` to w
 - [ ] **CD into the folder** where you cloned **your fork**.
 
 Please follow along as the instructor uses _Test Driven Development (TDD)_ to implement the `add()` feature of a simple `calculator`.
+
+# Files with notes
+- ./calculator/calculator.spec.js
