@@ -13,6 +13,18 @@ class Car {
     return distance;
   }
 
+  delayedDrive(speed, ...legs) {
+    const distance = legs.reduce((acc, leg) => acc + leg);
+    const waitValue = 0; // ???
+
+    const returnValue = new Promise((resolve) => {
+      setTimeout(() => {
+        // set the odometer
+        this.odometer += distance;
+        resolve(distance);
+      }, waitValue);
+    });
+  }
   // create an async function that returns a promise and uses setTimeOut();
 }
 
