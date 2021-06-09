@@ -3,6 +3,7 @@ const Car = require("./car");
 
 describe("Car class", () => {
   let car;
+
   beforeEach(() => {
     car = new Car("toyota", "prius");
   });
@@ -47,5 +48,33 @@ describe("Car class", () => {
       car.drive(4, 5, 6);
       expect(car.odometer).toBe(15);
     });
+  });
+
+  describe("async drive() method", () => {
+    it("method exists", () => {
+      expect(car.asyncDrive).toBeDefined();
+    });
+    it("is a function", () => {
+      expect(car.asyncDrive).toBeInstanceOf(Function);
+    });
+    it("changes odometer", async () => {
+      expect(car.odometer).toBe(0);
+      await car.asyncDrive(4);
+      expect(car.odometer).toBe(4);
+    });
+    it("works multiple times", async () => {
+      expect(car.odometer).toBe(0);
+      await car.asyncDrive(4);
+      expect(car.odometer).toBe(4);
+      await car.asyncDrive(5);
+      expect(car.odometer).toBe(9);
+      await car.asyncDrive(6);
+      expect(car.odometer).toBe(15);
+    });
+      it("accepts multiple arguments", async () => {
+        expect(car.odometer).toBe(0);
+        await car.drive(4, 5, 6);
+        expect(car.odometer).toBe(15);
+      });
   });
 });
