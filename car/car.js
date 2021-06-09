@@ -1,7 +1,7 @@
 // Build a Car class!
 // Car class to have drive() and asyncDrive() methods, make, model, and odometer properties.
 class Car {
-  constructor(make, model, odometer) {
+  constructor(make, model) {
     this.make = make;
     this.model = model;
     this.odometer = 0;
